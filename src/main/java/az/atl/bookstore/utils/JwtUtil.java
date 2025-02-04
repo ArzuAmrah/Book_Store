@@ -39,7 +39,7 @@ public class JwtUtil {
     private Claims extractAllClaims(String token) {
         return Jwts
                 .parser()
-                .verifyWith((SecretKey) getSignKey()) // İmzalama açarı
+                .verifyWith((SecretKey) getSignKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
@@ -73,7 +73,6 @@ public class JwtUtil {
                 .compact();
     }
 
-    // İmzalama açarını qaytaran metod
     private Key getSignKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET);
         return Keys.hmacShaKeyFor(keyBytes);

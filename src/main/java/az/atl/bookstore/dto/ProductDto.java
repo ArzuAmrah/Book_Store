@@ -26,9 +26,9 @@ public class ProductDto {
     @Min(value = 0, message = "Price must be greater than or equal to 0")
     private Integer price;
 
-    private MultipartFile image;
-
-    private byte[] returnedImage;
+//    private MultipartFile image;
+//
+//    private byte[] returnedImage;
 
     @NotNull(message = "Category ID cannot be null")
     @Min(value = 1, message = "Category ID must be a positive number")

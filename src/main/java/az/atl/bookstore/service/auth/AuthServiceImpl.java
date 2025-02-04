@@ -21,7 +21,6 @@ public class AuthServiceImpl implements AuthService {
      */
     @Override
     public void register(UserDto userDTO) {
-        // Check if the email is already registered
         if (userRepository.findByEmail(userDTO.getEmail()).isPresent()) {
             throw new IllegalArgumentException("Email already in use!");
         }
